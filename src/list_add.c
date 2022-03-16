@@ -1,4 +1,8 @@
 #include "../includes/push_swap.h"
+
+/* lst_new:
+*   Creates and allocates memory for the initial node in a double linked list.
+*/
 t_list  *lst_new(int nb)
 {
     t_list *node;
@@ -12,6 +16,10 @@ t_list  *lst_new(int nb)
     return (node);
 }
 
+/* lst_add_head:
+*   Adds a node to the head of the list:
+*   [NULL]<-[new]<->[*]<->[*]<->[*]->[NULL]
+*/
 void    lst_add_head(t_list **list, t_list *node)
 {
     t_list  *firstnode;
@@ -29,6 +37,10 @@ void    lst_add_head(t_list **list, t_list *node)
     *list = node;
 }
 
+/* lst_add_tail:
+*   Adds a node to the tail of the list:
+*   [NULL]<-[*]<->[*]<->[*]<->[new]->[NULL]
+*/
 void    lst_add_tail(t_list **list, t_list *node)
 {
     t_list  *lastnode;

@@ -1,5 +1,8 @@
 #include "../includes/push_swap.h"
 
+/* lst_del_one:
+*   Frees a single node in the list.
+*/
 void	lst_del_one(t_list *lst)
 {
 	if (!lst)
@@ -7,9 +10,11 @@ void	lst_del_one(t_list *lst)
 	free(lst);
 }
 
+/* lst_clear:
+*   Frees all nodes in the list.
+*/
 void	lst_clear(t_list **lst)
 {
-	printf("Freeing list...\n");
 	t_list	*tmp;
     t_list  *node;
 
@@ -23,5 +28,4 @@ void	lst_clear(t_list **lst)
 		node = tmp;
 	}
 	*lst = NULL;
-	printf("List freed.\n");
 }

@@ -1,11 +1,17 @@
 #include "../includes/push_swap.h"
 
+/* error_message:
+*   Writes an error message to the standard output.
+*/
 void    error_message(void)
 {
     write(1, "Error\n", 6);
     return ;
 }
 
+/* ft_atoi:
+*   Converts an alphanumeric string of characters into a long integer.
+*/
 long int ft_atoi(const char *str)
 {
     long int    nb;

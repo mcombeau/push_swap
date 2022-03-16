@@ -1,5 +1,8 @@
 # include "../includes/push_swap.h"
 
+/* lst_find_tail:
+*   Returns a pointer to the last node in the list.
+*/
 t_list	*lst_find_tail(t_list *lst)
 {
 	if (!lst)
@@ -9,6 +12,9 @@ t_list	*lst_find_tail(t_list *lst)
 	return (lst);
 }
 
+/* lst_find_head:
+*   Returns a pointer to the first node in the list.
+*/
 t_list	*lst_find_head(t_list *lst)
 {
 	if (!lst)
