@@ -1,7 +1,7 @@
 #include "../includes/push_swap.h"
 
 /* error_message:
-*   Writes an error message to the standard output.
+*   Writes "Error\n" to the standard output.
 */
 void    error_message(void)
 {
