@@ -14,11 +14,15 @@ typedef struct s_list
     struct s_list   *prev;
 } t_list;
 
-typedef struct s_stack
+typedef struct s_data
 {
-    struct s_list   *head;
-    struct s_list   *tail;
-} t_stack;
+    struct s_list   *a;
+    struct s_list   *b;
+} t_data;
+
+t_data  *stack_init(int ac, char **av);
+t_data  *stack_data_init(void);
+void	data_clear(t_data *data);
 
 /* List Handling */
 t_list  *lst_new(int nb);
@@ -28,6 +32,12 @@ t_list	*lst_find_tail(t_list *lst);
 t_list	*lst_find_head(t_list *lst);
 void	lst_del_one(t_list *lst);
 void	lst_clear(t_list **lst);
+
+/* List actions */
+t_list  *swap(t_list *stack);
+t_list  *rotate(t_list *stack);
+t_list  *rev_rotate(t_list *stack);
+t_list  *push(t_list **src, t_list *dest);
 
 /* Utils */
 long int ft_atoi(const char *str);
@@ -43,5 +53,9 @@ int arg_is_number(char *av);
 int arg_is_zero(char *av);
 int have_duplicates(char **av);
 int nbstr_cmp(const char *s1, const char *s2);
+
+/* Debug */
+void debug_print_list(t_list *list);
+void    do_tests(t_data *stack_data);
 
 #endif

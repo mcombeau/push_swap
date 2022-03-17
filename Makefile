@@ -8,8 +8,11 @@ OBJ_PATH = obj/
 SRC		= push_swap.c \
 		input_check.c input_check_utils.c \
 		initialization.c \
+		stack_data.c \
 		list_add.c list_clear.c list_find.c \
-		utils.c
+		actions.c \
+		utils.c \
+		debug.c
 SRCS	= $(addprefix $(SRC_PATH), $(SRC))
 OBJ		= $(SRC:.c=.o)
 OBJS	= $(addprefix $(OBJ_PATH), $(OBJ))
