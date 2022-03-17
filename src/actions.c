@@ -98,14 +98,16 @@ t_list  *push(t_list **src, t_list *dest)
         dest = lst_new((*src)->nb);
     else
         lst_add_head(&dest, lst_new((*src)->nb));
-    if ((*src)->next == NULL)
+    if ((*src)->next != NULL)
+    {
+        *src = (*src)->next;
+        lst_del_one((*src)->prev);
+        (*src)->prev = NULL;
+    }
+    else
     {
         lst_del_one((*src));
         *src = NULL;
-        return(dest);
-    }
-    *src = (*src)->next;
-    lst_del_one((*src)->prev);
-    (*src)->prev = NULL;
+    }    
     return (dest);
 }
