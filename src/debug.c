@@ -12,8 +12,9 @@ void debug_print_list(t_list *list)
     printf("\n");
 }
 
-void    do_tests(t_data *stack_data)
+void    do_action_tests(t_data *stack_data)
 {
+    printf("Stack a size is: %d and contains:\n", stack_data->size);
     debug_print_list(stack_data->a);
 
     printf("\n--SWAP TEST:\n");
@@ -104,4 +105,41 @@ void    do_tests(t_data *stack_data)
     debug_print_list(stack_data->a);
     printf("Stack b\t:\t");
     debug_print_list(stack_data->b);
+}
+
+void do_sort_actions_test(t_data **stack_data)
+{
+    do_action(stack_data, "blabla", 3);
+    printf("Stack a\t:\t");
+    debug_print_list((*stack_data)->a);
+    printf("Stack b\t:\t");
+    debug_print_list((*stack_data)->b);
+    printf("\n");
+
+    do_action(stack_data, "pb", 3);
+    printf("Stack a\t:\t");
+    debug_print_list((*stack_data)->a);
+    printf("Stack b\t:\t");
+    debug_print_list((*stack_data)->b);
+    printf("\n");
+
+    do_action(stack_data, "ss", 1);
+    printf("Stack a\t:\t");
+    debug_print_list((*stack_data)->a);
+    printf("Stack b\t:\t");
+    debug_print_list((*stack_data)->b);
+    printf("\n");
+
+    do_action(stack_data, "rr", 1);
+    printf("Stack a\t:\t");
+    debug_print_list((*stack_data)->a);
+    printf("Stack b\t:\t");
+    debug_print_list((*stack_data)->b);
+    printf("\n");
+    
+    do_action(stack_data, "rrr", 1);
+    printf("Stack a\t:\t");
+    debug_print_list((*stack_data)->a);
+    printf("Stack b\t:\t");
+    debug_print_list((*stack_data)->b);
 }

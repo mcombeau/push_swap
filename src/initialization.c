@@ -24,5 +24,7 @@ t_data  *stack_init(int ac, char **av)
             lst_add_tail(&(stacks->a), lst_new(nb));
         i++;
     }
+    stacks->a_tail = lst_find_tail(stacks->a);
+    stacks->size = ac -1;
     return (stacks);
 }

@@ -12,7 +12,19 @@ int push_swap(int ac, char **av)
         error_message();
         return (1);
     }
-    do_tests(stack_data);
+//    do_action_tests(stack_data);
+    printf("[push_swap] Stack a\t:\t");
+    debug_print_list(stack_data->a);
+    printf("[push_swap] Stack b\t:\t");
+    debug_print_list(stack_data->b);
+    printf("[push_swap] Sorting...\n");
+    sort(&stack_data);
+    printf("[push_swap] Sorted!\n");
+    printf("[push_swap] Stack a\t:\t");
+    debug_print_list(stack_data->a);
+    printf("[push_swap] Stack b\t:\t");
+    debug_print_list(stack_data->b);
+    
     data_clear(stack_data);
     return (0);
 }
