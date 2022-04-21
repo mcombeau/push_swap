@@ -1,4 +1,4 @@
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 /* swap:
 *   Swaps the first two elements in the stack:

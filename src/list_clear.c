@@ -1,4 +1,4 @@
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 /* lst_del_one:
 *   Frees a single node in the list.

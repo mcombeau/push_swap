@@ -1,4 +1,4 @@
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 /* is_digit:
 *   Checks if the character is a digit.

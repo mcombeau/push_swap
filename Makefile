@@ -17,11 +17,12 @@ SRC		= push_swap.c \
 SRCS	= $(addprefix $(SRC_PATH), $(SRC))
 OBJ		= $(SRC:.c=.o)
 OBJS	= $(addprefix $(OBJ_PATH), $(OBJ))
+INC		= -I ./includes/
 
 all: $(NAME)
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@ $(INC)
 
 $(OBJS): $(OBJ_PATH)
 
@@ -29,7 +30,7 @@ $(OBJ_PATH):
 	mkdir $(OBJ_PATH)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(INC)
 
 clean:
 	rm -rf $(OBJ_PATH)

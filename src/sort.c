@@ -1,4 +1,4 @@
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 /*  is_sorted:
 *   Checks to see if a list is sorted in ascending order.

@@ -1,4 +1,4 @@
-# include "../includes/push_swap.h"
+# include "push_swap.h"
 
 /* lst_find_tail:
 *   Returns a pointer to the last node in the list.

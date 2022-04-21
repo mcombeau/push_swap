@@ -1,4 +1,4 @@
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 /* lst_new:
 *   Creates and allocates memory for the initial node in a double linked list.
