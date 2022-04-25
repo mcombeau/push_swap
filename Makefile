@@ -14,6 +14,7 @@ SRC		= main.c \
 SRCS	= $(addprefix $(SRC_PATH), $(SRC))
 OBJ		= $(SRC:.c=.o)
 OBJS	= $(addprefix $(OBJ_PATH), $(OBJ))
+INC		= -I ./includes/
 
 INCS	= -I ./includes/
 
