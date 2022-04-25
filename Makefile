@@ -10,6 +10,7 @@ SRC		= main.c \
 		list.c \
 		initialization.c \
 		swap.c push.c rotate.c reverse_rotate.c \
+		sort_tiny.c \
 		utils.c
 SRCS	= $(addprefix $(SRC_PATH), $(SRC))
 OBJ		= $(SRC:.c=.o)
