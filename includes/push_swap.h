@@ -6,7 +6,7 @@
 /*   By: mcombeau <mcombeau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 13:47:42 by mcombeau          #+#    #+#             */
-/*   Updated: 2022/04/25 17:04:29 by mcombeau         ###   ########.fr       */
+/*   Updated: 2022/04/25 17:38:41 by mcombeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,21 @@ void		assign_index(t_stack *stack_a, int ac);
 /* push_swap */
 
 /* Operations */
+void		push(t_stack **src, t_stack **dest);
+void		do_pa(t_stack **stack_a, t_stack **stack_b);
+void		do_pb(t_stack **stack_a, t_stack **stack_b);
 void		swap(t_stack *stack);
 void		do_sa(t_stack *stack_a);
 void		do_sb(t_stack *stack_b);
 void		do_ss(t_stack *stack_a, t_stack *stack_b);
+void		rotate(t_stack **stack);
+void		do_ra(t_stack **stack_a);
+void		do_rb(t_stack **stack_b);
+void		do_rr(t_stack **stack_a, t_stack **stack_b);
+void		rev_rotate(t_stack **stack);
+void		do_rrr(t_stack **stack_a, t_stack **stack_b);
+void		do_rra(t_stack **stack_a);
+void		do_rrb(t_stack **stack_b);
 
 /* Stack functions */
 t_stack		*get_stack_tail(t_stack *stack);
