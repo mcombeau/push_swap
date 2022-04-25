@@ -5,23 +5,22 @@ NAME	= push_swap
 SRC_PATH = src/
 OBJ_PATH = obj/
 
-SRC		= push_swap.c \
-		sort.c \
+SRC		= main.c \
 		input_check.c input_check_utils.c \
+		list.c \
 		initialization.c \
-		stack_data.c \
-		list_add.c list_clear.c list_find.c \
-		actions.c do_action.c\
-		utils.c \
-		debug.c
+		swap.c push.c rotate.c reverse_rotate.c \
+		utils.c
 SRCS	= $(addprefix $(SRC_PATH), $(SRC))
 OBJ		= $(SRC:.c=.o)
 OBJS	= $(addprefix $(OBJ_PATH), $(OBJ))
 
+INCS	= -I ./includes/
+
 all: $(NAME)
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@ $(INCS)
 
 $(OBJS): $(OBJ_PATH)
 
@@ -29,7 +28,7 @@ $(OBJ_PATH):
 	mkdir $(OBJ_PATH)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(INCS)
 
 clean:
 	rm -rf $(OBJ_PATH)

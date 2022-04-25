@@ -1,33 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcombeau <mcombeau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/25 14:04:00 by mcombeau          #+#    #+#             */
-/*   Updated: 2022/04/25 16:48:21 by mcombeau         ###   ########.fr       */
+/*   Created: 2022/04/25 17:05:01 by mcombeau          #+#    #+#             */
+/*   Updated: 2022/04/25 17:10:36 by mcombeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char **av)
+void	push(t_stack **src, t_stack **dest)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
-	int		stack_size;
+	t_stack	*tmp;
 
-	if (ac <= 2)
-		return (0);
-	if (!is_correct_input(av))
-		exit_error();
-	stack_b = NULL;
-	stack_a = init_stack(ac, av);
-	stack_size = get_stack_size(stack_a);
-	assign_index(stack_a, stack_size + 1);
-	(void)stack_b;
-	(void)stack_size;
-	push_swap(&stack_a, &stack_b, stack_size);
-	return (0);
+	if (src == NULL)
+		return ;
+	tmp = (*src)->next;
+	(*src)->next = *dest;
+	*dest = *src;
+	*src = tmp;
+}
+
+void	do_pa(t_stack **stack_a, t_stack **stack_b)
+{
+	push(stack_a, stack_b);
+	ft_putstr("pa\n");
+}
+
+void	do_pb(t_stack **stack_a, t_stack **stack_b)
+{
+	push(stack_b, stack_a);
+	ft_putstr("pb\n");
 }
