@@ -6,7 +6,7 @@
 /*   By: mcombeau <mcombeau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 13:47:42 by mcombeau          #+#    #+#             */
-/*   Updated: 2022/04/25 18:22:42 by mcombeau         ###   ########.fr       */
+/*   Updated: 2022/04/26 17:02:28 by mcombeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@ typedef struct s_stack
 {
 	int				value;
 	int				index;
+	int				pos;
+	int				target_pos;
+	int				cost_a;
+	int				cost_b;
 	struct s_stack	*next;
 }	t_stack;
 
@@ -33,6 +37,24 @@ void		assign_index(t_stack *stack_a, int ac);
 /* Sorting Algorithms */
 int			is_sorted(t_stack *stack);
 void		tiny_sort(t_stack **stack);
+void		push_all_save_three(t_stack **stack_a, t_stack **stack_b);
+void		sort(t_stack **stack_a, t_stack **stack_b);
+
+/* Position */
+void		get_position(t_stack **stack);
+int			get_lowest_index_position(t_stack **stack);
+int			get_highest_target(t_stack **stack_a, int cmp, int target);
+void		get_target_position(t_stack **stack_a, t_stack **stack_b);
+
+/* Cost */
+void		get_cost(t_stack **stack_a, t_stack **stack_b);
+void		get_cheapest_move(t_stack **stack_a, t_stack **stack_b);
+
+/* Calculate Move */
+void		rev_rotate_both(t_stack **a, t_stack **b, int *cost_a, int *cost_b);
+void		rotate_both(t_stack **a, t_stack **b, int *cost_a, int *cost_b);
+void		rotate_one(t_stack **a, t_stack **b, int *cost, char stack);
+void		calculate_move(t_stack **a, t_stack **b, int cost_a, int cost_b);
 
 /* Operations */
 void		push(t_stack **src, t_stack **dest);
@@ -62,6 +84,7 @@ int			get_stack_size(t_stack	*stack);
 void		free_stack(t_stack **stack);
 long int	ft_atoi(const char *str);
 void		ft_putstr(char *str);
+int			nb_abs(int nb);
 
 /* Error */
 void		exit_error(void);

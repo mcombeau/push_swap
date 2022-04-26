@@ -7,16 +7,15 @@ OBJ_PATH = obj/
 
 SRC		= main.c \
 		input_check.c input_check_utils.c \
-		list.c \
 		initialization.c \
+		stack.c \
 		swap.c push.c rotate.c reverse_rotate.c \
-		sort_tiny.c \
+		sort_tiny.c sort.c \
+		position.c cost.c calculate_move.c \
 		utils.c
 SRCS	= $(addprefix $(SRC_PATH), $(SRC))
 OBJ		= $(SRC:.c=.o)
 OBJS	= $(addprefix $(OBJ_PATH), $(OBJ))
-INC		= -I ./includes/
-
 INCS	= -I ./includes/
 
 all: $(NAME)
@@ -30,7 +29,7 @@ $(OBJ_PATH):
 	mkdir $(OBJ_PATH)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(INCS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 clean:
 	rm -rf $(OBJ_PATH)

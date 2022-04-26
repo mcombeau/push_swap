@@ -6,7 +6,7 @@
 /*   By: mcombeau <mcombeau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 14:04:00 by mcombeau          #+#    #+#             */
-/*   Updated: 2022/04/25 18:14:06 by mcombeau         ###   ########.fr       */
+/*   Updated: 2022/04/26 18:15:39 by mcombeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,29 +25,18 @@ int	is_sorted(t_stack *stack)
 
 void	push_swap(t_stack **stack_a, t_stack **stack_b, int stack_size)
 {
-	t_stack	*tmp;
-
-	tmp = *stack_a;
-	printf("Before sort: ");
-	while (tmp)
-	{
-		printf("%d ", tmp->value);
-		tmp = tmp->next;
-	}
-	printf("\n");
 	if (stack_size == 2 && !is_sorted(*stack_a))
 		do_sa(stack_a);
 	else if (stack_size == 3)
 		tiny_sort(stack_a);
-	tmp = *stack_a;
-	printf("After sort: ");
-	while (tmp)
+	else if (stack_size > 3 && !is_sorted(*stack_a))
 	{
-		printf("%d ", tmp->value);
-		tmp = tmp->next;
+		sort(stack_a, stack_b);
+		get_target_position(stack_a, stack_b);
+		get_cost(stack_a, stack_b);
 	}
-	printf("\n");
-	(void)stack_b;
+	free_stack(stack_a);
+	free_stack(stack_b);
 }
 
 int	main(int ac, char **av)

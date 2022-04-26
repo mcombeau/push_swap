@@ -6,7 +6,7 @@
 /*   By: mcombeau <mcombeau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 14:26:12 by mcombeau          #+#    #+#             */
-/*   Updated: 2022/04/25 18:18:20 by mcombeau         ###   ########.fr       */
+/*   Updated: 2022/04/26 15:25:48 by mcombeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,10 @@ t_stack	*stack_new(int value)
 		return (NULL);
 	new->value = value;
 	new->index = 0;
+	new->pos = -1;
+	new->target_pos = -1;
+	new->cost_a = -1;
+	new->cost_b = -1;
 	new->next = NULL;
 	return (new);
 }

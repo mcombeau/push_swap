@@ -6,7 +6,7 @@
 /*   By: mcombeau <mcombeau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 13:40:24 by mcombeau          #+#    #+#             */
-/*   Updated: 2022/04/25 18:21:03 by mcombeau         ###   ########.fr       */
+/*   Updated: 2022/04/26 16:22:36 by mcombeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,11 @@ void	ft_putstr(char *str)
 		write(1, &str[i], 1);
 		i++;
 	}
+}
+
+int	nb_abs(int nb)
+{
+	if (nb < 0)
+		return (nb * -1);
+	return (nb);
 }
