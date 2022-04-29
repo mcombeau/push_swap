@@ -18,12 +18,10 @@ OBJ		= $(SRC:.c=.o)
 OBJS	= $(addprefix $(OBJ_PATH), $(OBJ))
 INCS	= -I ./includes/
 
-all: $(NAME)
+all: $(OBJ_PATH) $(NAME)
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	$(CC) $(CFLAGS) -c $< -o $@ $(INCS)
-
-$(OBJS): $(OBJ_PATH)
 
 $(OBJ_PATH):
 	mkdir $(OBJ_PATH)
