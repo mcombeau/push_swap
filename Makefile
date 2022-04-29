@@ -18,7 +18,7 @@ OBJ		= $(SRC:.c=.o)
 OBJS	= $(addprefix $(OBJ_PATH), $(OBJ))
 INCS	= -I ./includes/
 
-all: $(OBJ_PATH) $(NAME)
+all: $(OBJ_PATH) $(NAME) 
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	$(CC) $(CFLAGS) -c $< -o $@ $(INCS)

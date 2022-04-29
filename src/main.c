@@ -6,7 +6,7 @@
 /*   By: mcombeau <mcombeau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 14:04:00 by mcombeau          #+#    #+#             */
-/*   Updated: 2022/04/26 18:15:39 by mcombeau         ###   ########.fr       */
+/*   Updated: 2022/04/29 11:34:00 by mcombeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,9 @@ int	main(int ac, char **av)
 	t_stack	*stack_b;
 	int		stack_size;
 
-	if (ac <= 2)
+	if (ac < 2)
 		return (0);
+	// ft_split the av if need be here!!!!!!!
 	if (!is_correct_input(av))
 		exit_error();
 	stack_b = NULL;
