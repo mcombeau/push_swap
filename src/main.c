@@ -6,12 +6,16 @@
 /*   By: mcombeau <mcombeau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 14:04:00 by mcombeau          #+#    #+#             */
-/*   Updated: 2022/04/29 11:34:00 by mcombeau         ###   ########.fr       */
+/*   Updated: 2022/04/30 15:11:18 by mcombeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/* is_sorted:
+*	Checks if a stack is sorted.
+*	Returns 0 if the stack is not sorted, 1 if it is sorted.
+*/
 int	is_sorted(t_stack *stack)
 {
 	while (stack->next != NULL)
@@ -23,22 +27,25 @@ int	is_sorted(t_stack *stack)
 	return (1);
 }
 
-void	push_swap(t_stack **stack_a, t_stack **stack_b, int stack_size)
+/* push_swap:
+*	Chooses a sorting method depending on the number
+*	of values to be sorted.
+*/
+static void	push_swap(t_stack **stack_a, t_stack **stack_b, int stack_size)
 {
 	if (stack_size == 2 && !is_sorted(*stack_a))
 		do_sa(stack_a);
 	else if (stack_size == 3)
 		tiny_sort(stack_a);
 	else if (stack_size > 3 && !is_sorted(*stack_a))
-	{
 		sort(stack_a, stack_b);
-		get_target_position(stack_a, stack_b);
-		get_cost(stack_a, stack_b);
-	}
-	free_stack(stack_a);
-	free_stack(stack_b);
 }
 
+/* main:
+*	Checks if the input is correct, in which case it initializes stacks a and b,
+*	assigns each value indexes and sorts the stacks. When sorting is done, frees
+*	the stacks and exits.
+*/
 int	main(int ac, char **av)
 {
 	t_stack	*stack_a;
@@ -47,13 +54,14 @@ int	main(int ac, char **av)
 
 	if (ac < 2)
 		return (0);
-	// ft_split the av if need be here!!!!!!!
 	if (!is_correct_input(av))
-		exit_error();
+		exit_error(NULL, NULL);
 	stack_b = NULL;
-	stack_a = init_stack(ac, av);
+	stack_a = fill_stack_values(ac, av);
 	stack_size = get_stack_size(stack_a);
 	assign_index(stack_a, stack_size + 1);
 	push_swap(&stack_a, &stack_b, stack_size);
+	free_stack(&stack_a);
+	free_stack(&stack_b);
 	return (0);
 }
