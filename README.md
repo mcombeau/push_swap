@@ -28,6 +28,8 @@ The program can be checked with the provided checker, like this :
 ARG="3 0 9 2 -1"; ./push_swap $ARG | ./checker $ARG
 ```
 
+You can also simply ```make test3```, ```make test5```, ```make test100``` or ```make test500``` to quickly test the program with that number of values to sort.
+
 To visualize the sorting process, please use [O-reo's push_swap visualizer](https://github.com/o-reo/push_swap_visualizer).
 
 ## How it Works
