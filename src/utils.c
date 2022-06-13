@@ -6,7 +6,7 @@
 /*   By: mcombeau <mcombeau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 13:40:24 by mcombeau          #+#    #+#             */
-/*   Updated: 2022/04/30 13:46:51 by mcombeau         ###   ########.fr       */
+/*   Updated: 2022/06/13 19:19:03 by mcombeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	free_stack(t_stack **stack)
 {
 	t_stack	*tmp;
 
-	if (!stack)
+	if (!stack || !(*stack))
 		return ;
 	while (*stack)
 	{
@@ -36,9 +36,9 @@ void	free_stack(t_stack **stack)
 */
 void	exit_error(t_stack **stack_a, t_stack **stack_b)
 {
-	if (*stack_a != NULL)
+	if (stack_a == NULL || *stack_a != NULL)
 		free_stack(stack_a);
-	if (*stack_b != NULL)
+	if (stack_b == NULL || *stack_b != NULL)
 		free_stack(stack_b);
 	write(2, "Error\n", 6);
 	exit (1);
