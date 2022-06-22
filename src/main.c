@@ -33,11 +33,13 @@ int	is_sorted(t_stack *stack)
 */
 static void	push_swap(t_stack **stack_a, t_stack **stack_b, int stack_size)
 {
-	if (stack_size == 2 && !is_sorted(*stack_a))
+	if (is_sorted(*stack_a))
+		return ;
+	if (stack_size == 2)
 		do_sa(stack_a);
 	else if (stack_size == 3)
 		tiny_sort(stack_a);
-	else if (stack_size > 3 && !is_sorted(*stack_a))
+	else if (stack_size > 3)
 		sort(stack_a, stack_b);
 }
 
