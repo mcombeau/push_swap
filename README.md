@@ -10,7 +10,7 @@ push_swap is a 42 school algorithm project where we must sort a given list of ra
 ---
 
 ## Status
-Work in progress...
+Awaiting evaluation.
 
 ## Usage
 
