@@ -1,6 +1,14 @@
 # push_swap
 push_swap is a 42 school algorithm project where we must sort a given list of random numbers with a limited set of instructions, using the lowest possible number of actions.
 
+---
+
+:us: Read my article in English about this project: [Push_Swap: an Efficient Positional Sorting Algorithm](https://www.codequoi.com/en/push_swap-efficient-positional-sorting-algorithm/)
+
+:fr: Lire mon article en français sur ce projet :  [Push_swap : un algorithme de tri positionnel efficace](https://www.codequoi.com/push_swap-algorithme-de-tri-positionel-efficace/)
+
+---
+
 ## Status
 Work in progress...
 
