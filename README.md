@@ -15,7 +15,7 @@ push_swap is a 42 school algorithm project where we must sort a given list of ra
 ---
 
 ## Status
-Awaiting evaluation.
+Finished 05/09/2022. Grade: 100%
 
 ## Usage
 
