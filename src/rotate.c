@@ -6,7 +6,7 @@
 /*   By: mcombeau <mcombeau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 17:18:17 by mcombeau          #+#    #+#             */
-/*   Updated: 2022/04/30 13:29:06 by mcombeau         ###   ########.fr       */
+/*   Updated: 2022/09/28 11:13:19 by mcombeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	do_rb(t_stack **stack_b)
 	ft_putstr("rb\n");
 }
 
-/* do_ra:
+/* do_rr:
 *	Sends the top element of both stack a and stack b to the bottom
 *	of their respective stacks.
 *	Prints "rr" to the standard output.
