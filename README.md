@@ -6,6 +6,8 @@
 
 push_swap is a 42 school algorithm project where we must sort a given list of random numbers with a limited set of instructions, using the lowest possible number of actions.
 
+> This project has been archived in the state it was in at the time of evaluation.
+
 ## Status
 Finished 05/09/2022. Grade: 100%
 
